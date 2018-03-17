@@ -5,3 +5,5 @@ Proyecto desarrollado como parte del Trabajo Fín de Grado del mismo nombre (EPe
 Licencia: GPL.
 
 Autor: Juan Ignacio Benítez Palacios
+
+Curso 2017-18. Entrega: Marzo 2018
