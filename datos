@@ -76,7 +76,7 @@ Public Class Datos
         Else
             notaEx = Nota.TextBox2.Text
         End If
-        nota_Def = notaEx + notaAula
+        nota_Def = notaEx + notaAula + CDec(PerfilActitudinal.TextBox2.Text)
         MessageBox.Show("La nota definitiva es " & nota_Def, "Calculo de la nota baremada", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
         Label10.Text = nota_Def
     End Sub
