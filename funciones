@@ -1,0 +1,111 @@
+Imports System.Data.OleDb
+Module Funciones
+    Public Comportamiento, Motivacion, TrabajoGrupo, Habilidades As Integer
+    Public NotaTrabajogrupo, NotaMotivacion, NotaComportamiento, NotaHabilidades, NotaPerfilActitudinal As Decimal
+    Public conex As New OleDb.OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Juan Ignacio Benítez\source\repos\EvaluacionPersonalizada\EvaluacionPersonalizada\BasededatosNotas.accdb")
+    Dim ident As Integer
+    Dim apell, nomb, identificacion, grupo As String
+    Dim cmd As New OleDbCommand
+    Dim sql As String
+    Dim dr As OleDbDataReader
+    Dim notaEx, notaClase, notaAct As Decimal
+    Public Sub Conectar()
+        Try
+            conex.Open()
+        Catch ex As Exception
+            MsgBox("No conectado con la base de datos")
+            MsgBox(Prompt:=ex.ToString)
+        End Try
+    End Sub
+    Public Sub Comprobar()
+        If (Datos_de_alumno.TextBox1.Text = "") Then
+            MsgBox("El campo no debe estar vacío")
+            Datos_de_alumno.TextBox1.Select()
+        Else
+            identificacion = Datos_de_alumno.TextBox1.Text
+            apell = ""
+            nomb = ""
+            apell = Datos_de_alumno.TextBox2.Text
+            nomb = Datos_de_alumno.TextBox3.Text
+            grupo = Datos_de_alumno.TextBox4.Text
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conex
+            sql = "INSERT INTO NOTAS (ALUMNO, APELLIDOS, NOMBRE, GRUPO) "
+            sql += "VALUES ('" & identificacion & "','" & apell & "', '" & nomb & "', '" & grupo & " ')"
+            cmd.CommandText = sql
+            Try
+                cmd.ExecuteNonQuery()
+                MsgBox("Registro insertado")
+            Catch ex As Exception
+                MsgBox("Registro NO insertado")
+            End Try
+        End If
+    End Sub
+    Public Sub ActualizarNotaEx()
+        If (Nota.TextBox1.Text = "") Then
+            MsgBox("El campo no debe estar vacío")
+            Nota.TextBox1.Select()
+        Else
+            ident = Val(Datos_de_alumno.TextBox1.Text)
+            notaEx = CDec(Nota.TextBox2.Text)
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conex
+            sql = "UPDATE NOTAS SET "
+            sql += "ALUMNO = " & ident & ","
+            sql += "NOTAEXAMEN = '" & notaEx & "'"
+            sql += "WHERE ALUMNO = " & ident & " "
+            cmd.CommandText = sql
+            Try
+                cmd.ExecuteNonQuery()
+                '               MsgBox("Calificación actualizada")
+            Catch ex As Exception
+                MsgBox("Calificación NO actualizada")
+            End Try
+        End If
+    End Sub
+    Public Sub ActualizarNotaAula()
+        If (Aula.TextBox1.Text = "") Then
+            MsgBox("El campo no debe estar vacío")
+            Aula.TextBox1.Select()
+        Else
+            ident = Val(Datos_de_alumno.TextBox1.Text)
+            notaClase = CDec(Aula.TextBox2.Text)
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conex
+            sql = "UPDATE NOTAS SET "
+            sql += "ALUMNO = " & ident & ","
+            sql += "TRABAJOCLASE = '" & notaClase & "'"
+            sql += "WHERE ALUMNO = " & ident & ""
+            cmd.CommandText = sql
+            Try
+                cmd.ExecuteNonQuery()
+                '                MsgBox("Calificación actualizada")
+            Catch ex As Exception
+                MsgBox("Calificación NO actualizada")
+            End Try
+        End If
+    End Sub
+    Public Sub ActualizarNotaActitudinal()
+        If (PerfilActitudinal.TextBox1.Text = "") Then
+            MsgBox("El campo no debe estar vacío")
+            PerfilActitudinal.TextBox1.Select()
+        Else
+            ident = Val(Datos_de_alumno.TextBox1.Text)
+            notaAct = CDec(PerfilActitudinal.TextBox2.Text)
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conex
+            sql = "UPDATE NOTAS SET "
+            sql += "ALUMNO = " & ident & ","
+            sql += "PERFILACTITUDINAL = '" & notaAct & "'"
+            sql += "WHERE ALUMNO = " & ident & ""
+            cmd.CommandText = sql
+            Try
+                cmd.ExecuteNonQuery()
+                MsgBox("Calificaciones almacenadas")
+                '               MsgBox("Calificación actualizada")
+            Catch ex As Exception
+                MsgBox("Calificación NO actualizada")
+            End Try
+        End If
+    End Sub
+End Module
