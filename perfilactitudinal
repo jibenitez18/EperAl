@@ -1,0 +1,23 @@
+Public Class PerfilActitudinal
+    Dim nota_ex, nota_cal As Single
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        Chart1.Show()
+        Me.Chart1.Titles.Add("MOSTRANDO NOTAS ACTITUDINALES")
+        Me.Chart1.Series("Notas de actitud").Points.AddXY("Motivación", NotaMotivacion)
+        Me.Chart1.Series("Notas de actitud").Points.AddXY("Trabajo en grupo", NotaTrabajogrupo)
+        Me.Chart1.Series("Notas de actitud").Points.AddXY("Comportamiento", NotaComportamiento)
+        Me.Chart1.Series("Notas de actitud").Points.AddXY("Habilidades cognitivas", NotaHabilidades)
+    End Sub
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Datos.Visible = False
+        Datos.Close()
+        Datos.Dispose()
+        Datos.ShowDialog()
+    End Sub
+    Private Sub PerfilActitudinal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = New Size(1250, 650)
+        Chart1.Visible = False
+        Me.TextBox1.Text = Val(NotaPerfilActitudinal)
+        Me.TextBox2.Text = Val(NotaPerfilActitudinal * 0.1)
+    End Sub
+End Class
