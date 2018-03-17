@@ -1,0 +1,175 @@
+Public Class Actitudes
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        End
+    End Sub
+    Private Sub NotaDeExamenToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+        Nota.Show()
+    End Sub
+    Private Sub TrabajoDeAulaToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+        Aula.Show()
+    End Sub
+    Private Sub Actitudes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.RadioButton1.Select()
+        Comportamiento = 0
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
+        Datos.Show()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ActitudesC.Visible = False
+        ActitudesC.Close()
+        ActitudesC.Dispose()
+        ActitudesC.ShowDialog()
+    End Sub
+    Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
+        TrabajoGrupo = CInt(RadioButton1.Text)
+    End Sub
+    Private Sub RadioButton5_Click(sender As Object, e As EventArgs) Handles RadioButton5.Click
+        TrabajoGrupo = CInt(RadioButton5.Text)
+    End Sub
+    Private Sub RadioButton4_Click(sender As Object, e As EventArgs) Handles RadioButton4.Click
+        TrabajoGrupo = CInt(RadioButton4.Text)
+    End Sub
+    Private Sub RadioButton3_Click(sender As Object, e As EventArgs) Handles RadioButton3.Click
+        TrabajoGrupo = CInt(RadioButton3.Text)
+    End Sub
+    Private Sub RadioButton2_Click(sender As Object, e As EventArgs) Handles RadioButton2.Click
+        TrabajoGrupo = CInt(RadioButton2.Text)
+    End Sub
+    Private Sub RadioButton6_Click(sender As Object, e As EventArgs) Handles RadioButton6.Click
+        TrabajoGrupo += CInt(RadioButton6.Text)
+    End Sub
+    Private Sub RadioButton10_Click(sender As Object, e As EventArgs) Handles RadioButton10.Click
+        TrabajoGrupo += CInt(RadioButton10.Text)
+    End Sub
+    Private Sub RadioButton9_Click(sender As Object, e As EventArgs) Handles RadioButton9.Click
+        TrabajoGrupo += CInt(RadioButton9.Text)
+    End Sub
+    Private Sub RadioButton8_Click(sender As Object, e As EventArgs) Handles RadioButton8.Click
+        TrabajoGrupo += CInt(RadioButton8.Text)
+    End Sub
+    Private Sub RadioButton7_Click(sender As Object, e As EventArgs) Handles RadioButton7.Click
+        TrabajoGrupo += CInt(RadioButton7.Text)
+    End Sub
+    Private Sub RadioButton15_Click(sender As Object, e As EventArgs) Handles RadioButton15.Click
+        TrabajoGrupo += CInt(RadioButton15.Text)
+    End Sub
+    Private Sub RadioButton14_Click(sender As Object, e As EventArgs) Handles RadioButton14.Click
+        TrabajoGrupo += CInt(RadioButton14.Text)
+    End Sub
+    Private Sub RadioButton13_Click(sender As Object, e As EventArgs) Handles RadioButton13.Click
+        TrabajoGrupo += CInt(RadioButton13.Text)
+    End Sub
+    Private Sub RadioButton12_Click(sender As Object, e As EventArgs) Handles RadioButton12.Click
+        TrabajoGrupo += CInt(RadioButton12.Text)
+    End Sub
+    Private Sub RadioButton11_Click(sender As Object, e As EventArgs) Handles RadioButton11.Click
+        TrabajoGrupo += CInt(RadioButton11.Text)
+    End Sub
+    Private Sub RadioButton20_Click(sender As Object, e As EventArgs) Handles RadioButton20.Click
+        TrabajoGrupo += CInt(RadioButton20.Text)
+    End Sub
+    Private Sub RadioButton19_Click(sender As Object, e As EventArgs) Handles RadioButton19.Click
+        TrabajoGrupo += CInt(RadioButton19.Text)
+    End Sub
+    Private Sub RadioButton18_Click(sender As Object, e As EventArgs) Handles RadioButton18.Click
+        TrabajoGrupo += CInt(RadioButton18.Text)
+    End Sub
+    Private Sub RadioButton17_Click(sender As Object, e As EventArgs) Handles RadioButton17.Click
+        TrabajoGrupo += CInt(RadioButton17.Text)
+    End Sub
+    Private Sub RadioButton16_Click(sender As Object, e As EventArgs) Handles RadioButton16.Click
+        TrabajoGrupo += CInt(RadioButton16.Text)
+    End Sub
+    Private Sub RadioButton25_Click(sender As Object, e As EventArgs) Handles RadioButton25.Click
+        TrabajoGrupo += CInt(RadioButton25.Text)
+    End Sub
+    Private Sub RadioButton24_Click(sender As Object, e As EventArgs) Handles RadioButton24.Click
+        TrabajoGrupo += CInt(RadioButton24.Text)
+    End Sub
+    Private Sub RadioButton23_Click(sender As Object, e As EventArgs) Handles RadioButton23.Click
+        TrabajoGrupo += CInt(RadioButton23.Text)
+    End Sub
+    Private Sub RadioButton22_Click(sender As Object, e As EventArgs) Handles RadioButton22.Click
+        TrabajoGrupo += CInt(RadioButton22.Text)
+    End Sub
+    Private Sub RadioButton21_Click(sender As Object, e As EventArgs) Handles RadioButton21.Click
+        TrabajoGrupo += CInt(RadioButton21.Text)
+    End Sub
+    ' Nota de motivación. Aquí empieza el calculo de la segunda columna de calculo
+    Private Sub RadioButton50_Click(sender As Object, e As EventArgs) Handles RadioButton50.Click
+        Motivacion = CInt(RadioButton50.Text)
+    End Sub
+    Private Sub RadioButton49_Click(sender As Object, e As EventArgs) Handles RadioButton49.Click
+        Motivacion = CInt(RadioButton49.Text)
+    End Sub
+    Private Sub RadioButton48_Click(sender As Object, e As EventArgs) Handles RadioButton48.Click
+        Motivacion = CInt(RadioButton48.Text)
+    End Sub
+    Private Sub RadioButton47_Click(sender As Object, e As EventArgs) Handles RadioButton47.Click
+        Motivacion = CInt(RadioButton47.Text)
+    End Sub
+    Private Sub RadioButton46_Click(sender As Object, e As EventArgs) Handles RadioButton46.Click
+        Motivacion = CInt(RadioButton46.Text)
+    End Sub
+    Private Sub RadioButton45_Click(sender As Object, e As EventArgs) Handles RadioButton45.Click
+        Motivacion += CInt(RadioButton45.Text)
+    End Sub
+    Private Sub RadioButton44_Click(sender As Object, e As EventArgs) Handles RadioButton44.Click
+        Motivacion += CInt(RadioButton44.Text)
+    End Sub
+    Private Sub RadioButton43_Click(sender As Object, e As EventArgs) Handles RadioButton43.Click
+        Motivacion += CInt(RadioButton43.Text)
+    End Sub
+    Private Sub RadioButton42_Click(sender As Object, e As EventArgs) Handles RadioButton42.Click
+        Motivacion += CInt(RadioButton42.Text)
+    End Sub
+    Private Sub RadioButton41_Click(sender As Object, e As EventArgs) Handles RadioButton41.Click
+        Motivacion += CInt(RadioButton41.Text)
+    End Sub
+    Private Sub RadioButton40_Click(sender As Object, e As EventArgs) Handles RadioButton40.Click
+        Motivacion += CInt(RadioButton40.Text)
+    End Sub
+    Private Sub RadioButton39_Click(sender As Object, e As EventArgs) Handles RadioButton39.Click
+        Motivacion += CInt(RadioButton39.Text)
+    End Sub
+    Private Sub RadioButton38_Click(sender As Object, e As EventArgs) Handles RadioButton38.Click
+        Motivacion += CInt(RadioButton38.Text)
+    End Sub
+    Private Sub RadioButton37_Click(sender As Object, e As EventArgs) Handles RadioButton37.Click
+        Motivacion += CInt(RadioButton37.Text)
+    End Sub
+    Private Sub RadioButton36_Click(sender As Object, e As EventArgs) Handles RadioButton36.Click
+        Motivacion += CInt(RadioButton36.Text)
+    End Sub
+    Private Sub RadioButton35_Click(sender As Object, e As EventArgs) Handles RadioButton35.Click
+        Motivacion += CInt(RadioButton35.Text)
+    End Sub
+    Private Sub RadioButton34_Click(sender As Object, e As EventArgs) Handles RadioButton34.Click
+        Motivacion += CInt(RadioButton34.Text)
+    End Sub
+    Private Sub RadioButton33_Click(sender As Object, e As EventArgs) Handles RadioButton33.Click
+        Motivacion += CInt(RadioButton33.Text)
+    End Sub
+    Private Sub RadioButton32_Click(sender As Object, e As EventArgs) Handles RadioButton32.Click
+        Motivacion += CInt(RadioButton32.Text)
+    End Sub
+    Private Sub RadioButton31_Click(sender As Object, e As EventArgs) Handles RadioButton31.Click
+        Motivacion += CInt(RadioButton31.Text)
+    End Sub
+    Private Sub RadioButton30_Click(sender As Object, e As EventArgs) Handles RadioButton30.Click
+        Motivacion += CInt(RadioButton30.Text)
+    End Sub
+    Private Sub RadioButton29_Click(sender As Object, e As EventArgs) Handles RadioButton29.Click
+        Motivacion += CInt(RadioButton29.Text)
+    End Sub
+    Private Sub RadioButton28_Click(sender As Object, e As EventArgs) Handles RadioButton28.Click
+        Motivacion += CInt(RadioButton28.Text)
+    End Sub
+    Private Sub RadioButton27_Click(sender As Object, e As EventArgs) Handles RadioButton27.Click
+        Motivacion += CInt(RadioButton27.Text)
+    End Sub
+    Private Sub RadioButton26_Click(sender As Object, e As EventArgs) Handles RadioButton26.Click
+        Motivacion += CInt(RadioButton26.Text)
+    End Sub
+End Class
