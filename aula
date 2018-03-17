@@ -1,0 +1,53 @@
+Public Class Aula
+    Dim nota_aula, nota_cal As Single
+    Private Sub NotaDeExamenToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
+        Nota.Show()
+    End Sub
+    Private Sub PerfilActitudinalToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
+        Actitudes.Show()
+    End Sub
+    Private Sub BaremadaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+        Datos.Show()
+    End Sub
+    Private Sub CalculoToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+        ' Se calcula la nota del trabajo de clase baremada
+        Dim nota_aula, nota_cal As Single
+        nota_cal = Val(TextBox1.Text)
+        nota_aula = nota_cal * 0.3
+        TextBox2.Text = nota_aula
+    End Sub
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        ' Se calcula la nota del trabajo de clase baremada
+        nota_cal = Val(TextBox1.Text)
+        nota_aula = nota_cal * 0.3
+        TextBox2.Text = nota_aula
+    End Sub
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Datos.Visible = False
+        Datos.Close()
+        Datos.Dispose()
+        Datos.ShowDialog()
+        Me.TextBox2.Text = nota_aula
+    End Sub
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        ' Se realiza el gráfico con los datos
+        Chart1.Show()
+        Me.Chart1.Series("Trabajo de Aula").Points.AddXY("Nota de aula sobre 10 puntos", nota_cal)
+        Me.Chart1.Series("Trabajo de Aula").Points.AddXY("Nota de aula baremada", nota_aula)
+    End Sub
+    Private Sub Aula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Chart1.Hide()
+        Me.Size = New Size(1250, 650)
+    End Sub
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        ActualizarNotaAula()
+    End Sub
+    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
+    End Sub
+    Private Sub GráficaToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        ' Se realiza el gráfico con los datos
+        Chart1.Show()
+        Me.Chart1.Series("Trabajo de Aula").Points.AddXY("Nota de aula sobre 10 puntos", nota_cal)
+        Me.Chart1.Series("Trabajo de Aula").Points.AddXY("Nota de aula baremada", nota_aula)
+    End Sub
+End Class
