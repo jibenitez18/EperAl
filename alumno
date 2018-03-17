@@ -16,23 +16,18 @@ Public Class Datos_de_alumno
         Principal.Dispose()
         Principal.ShowDialog()
     End Sub
-
     Private Sub AcercaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaToolStripMenuItem.Click
         AcercaDe.Show()
     End Sub
-
     Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Comprobar()
     End Sub
-
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Comprobar()
     End Sub
-
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         End
     End Sub
-
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         End
     End Sub
@@ -48,15 +43,11 @@ Public Class Datos_de_alumno
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
-
     End Sub
-
     Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles TextBox1.LostFocus
         cmd.Connection = conex
         cmd.CommandType = CommandType.Text
-
         identificacion = Me.TextBox1.Text
-
         If identificacion <> "" Then
             cmd.CommandText = "SELECT * FROM notas WHERE alumno =" + identificacion
         Else
@@ -64,7 +55,6 @@ Public Class Datos_de_alumno
         End If
         Try
             dr = cmd.ExecuteReader()
-
             If dr.HasRows Then
                 MsgBox("Existe el registro consultado")
                 While dr.Read()
