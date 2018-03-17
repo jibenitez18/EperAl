@@ -1,0 +1,7 @@
+Public Class Inicio
+    Private Sub Button_1(sender As Object, e As EventArgs) Handles Arranque.Click
+        Datos_de_alumno.Show()
+        Me.ShowInTaskbar = False
+        Me.Visible = False
+    End Sub
+End Class
