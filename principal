@@ -6,10 +6,7 @@ Public Class Principal
         Aula.ShowDialog()
     End Sub
     Private Sub AcercaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaToolStripMenuItem.Click
-        AcercaDe.Visible = False
-        AcercaDe.Close()
-        AcercaDe.Dispose()
-        AcercaDe.ShowDialog()
+        AcercaDe.Show()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Nota.Visible = False
@@ -17,15 +14,24 @@ Public Class Principal
         Nota.Dispose()
         Nota.ShowDialog()
     End Sub
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Actitudes.Visible = False
         Actitudes.Close()
         Actitudes.Dispose()
         Actitudes.ShowDialog()
     End Sub
+
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button1.Text = "Trabajo de Aula"
         Button2.Text = "Calificación de Examen"
         Button3.Text = "Perfil Actitudinal"
     End Sub
-End Class
+
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        AcercaDe.Show()
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        End
+    End Sub
