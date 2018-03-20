@@ -3,9 +3,11 @@ Public Class Nota
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         End
     End Sub
+
     Private Sub TrabajoDeAulaToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
         Aula.Show()
     End Sub
+
     Private Sub PerfilActitudinalToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
         Actitudes.Show()
     End Sub
@@ -15,15 +17,19 @@ Public Class Nota
         nota_ex = nota_cal * 0.6
         TextBox2.Text = nota_ex
     End Sub
+
     Private Sub BaremadaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Datos.Show()
     End Sub
+
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         ' Se calcula la nota del éxamen baremada
         nota_cal = Val(TextBox1.Text)
         nota_ex = nota_cal * 0.6
         TextBox2.Text = nota_ex
+
     End Sub
+
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         Datos.Visible = False
         Datos.Close()
@@ -31,24 +37,42 @@ Public Class Nota
         Datos.ShowDialog()
         Me.TextBox2.Text = nota_ex
     End Sub
+
     Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
         Chart1.Show()
         Me.Chart1.Series("Nota de examen").Points.AddXY("Nota de examen sobre 10 puntos", nota_cal)
         Me.Chart1.Series("Nota de examen").Points.AddXY("Nota de examen baremada", nota_ex)
     End Sub
+
     Private Sub Nota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Chart1.Hide()
         Me.TextBox1.Focus()
         Me.Size = New Size(1250, 650)
     End Sub
+
     Private Sub GráficaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         ' Se realiza el gráfico con los datos
         Me.Chart1.Series("Nota de examen").Points.AddXY("Nota de examen sobre 10 puntos", nota_cal)
         Me.Chart1.Series("Nota de examen").Points.AddXY("Nota de examen baremada", nota_ex)
+
     End Sub
+
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         ActualizarNotaEx()
     End Sub
+
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        AcercaDe.Show()
+    End Sub
+
+    Private Sub AcercaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaToolStripMenuItem.Click
+        AcercaDe.Show()
+    End Sub
+
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        End
+    End Sub
+
     Friend Shared Sub Unload()
         Throw New NotImplementedException()
     End Sub
