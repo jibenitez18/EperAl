@@ -4,6 +4,7 @@ Public Class ActitudesC
         Actitudes.Close()
         Actitudes.Dispose()
         Actitudes.ShowDialog()
+
     End Sub
     Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
         Comportamiento = CInt(RadioButton1.Text)
@@ -164,15 +165,35 @@ Public Class ActitudesC
     Private Sub RadioButton26_Click(sender As Object, e As EventArgs) Handles RadioButton26.Click
         Habilidades += CInt(RadioButton26.Text)
     End Sub
+
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         NotaComportamiento = Comportamiento / 2.5
         NotaHabilidades = Habilidades / 2.5
         NotaTrabajogrupo = TrabajoGrupo / 2.5
         NotaMotivacion = Motivacion / 2.5
+
         NotaPerfilActitudinal = (NotaComportamiento + NotaHabilidades + NotaMotivacion + NotaTrabajogrupo) / 4
+
         PerfilActitudinal.Visible = False
         PerfilActitudinal.Close()
         PerfilActitudinal.Dispose()
         PerfilActitudinal.ShowDialog()
+
+    End Sub
+
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        AcercaDe.Show()
+    End Sub
+
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        End
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub AcercaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaToolStripMenuItem.Click
+        AcercaDe.Show()
     End Sub
 End Class
