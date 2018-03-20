@@ -1,5 +1,6 @@
 Public Class Datos
     Dim nota_Def, notaAula, notaEx As Single
+
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         ' Se calcula la nota baremada definitiva suma de las otras 3.
         If (Aula.TextBox2.Text = "") Then
@@ -18,24 +19,29 @@ Public Class Datos
         Else
             notaEx = Nota.TextBox2.Text
         End If
-        nota_Def = notaEx + notaAula
+        nota_Def = notaEx + notaAula + CDec(PerfilActitudinal.TextBox2.Text)
         MessageBox.Show("La nota definitiva es " & nota_Def, "Calculo de la nota baremada", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
         Label10.Text = nota_Def
     End Sub
+
     Private Sub NotaDeExamenToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Nota.Visible = False
         Nota.ShowDialog()
     End Sub
+
     Private Sub TrabajoDeAulaToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Aula.Visible = False
         Aula.ShowDialog()
     End Sub
+
     Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
         Chart1.Show()
         Me.Chart1.Series("NOTA DEFINITIVA").Points.AddXY("Nota de aula", Val(Aula.TextBox2.Text))
         Me.Chart1.Series("NOTA DEFINITIVA").Points.AddXY("Nota de examen", Val(Nota.TextBox2.Text))
         Me.Chart1.Series("NOTA DEFINITIVA").Points.AddXY("Nota de actitud", Val(PerfilActitudinal.TextBox2.Text))
+
     End Sub
+
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Dim msgRslt As MsgBoxResult
         ActualizarNotaEx()
@@ -58,6 +64,23 @@ Public Class Datos
             End
         End If
     End Sub
+
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        AcercaDe.Show()
+    End Sub
+
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        End
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub AcercaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaToolStripMenuItem.Click
+        AcercaDe.Show()
+    End Sub
+
     Private Sub CalculoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ' Se calcula la nota baremada definitiva suma de las otras 3.
         If (Aula.TextBox2.Text = "") Then
@@ -76,20 +99,25 @@ Public Class Datos
         Else
             notaEx = Nota.TextBox2.Text
         End If
-        nota_Def = notaEx + notaAula + CDec(PerfilActitudinal.TextBox2.Text)
+        nota_Def = notaEx + notaAula
         MessageBox.Show("La nota definitiva es " & nota_Def, "Calculo de la nota baremada", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
         Label10.Text = nota_Def
     End Sub
+
     Private Sub Datos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Si al cargar el formulario no se han introducido las notas se carga 0 por defecto.
         ' Las etiquetas se cargan a 0 para mostrar valores iniciales
+
         Label6.Text = ""
         Label7.Text = ""
         Label8.Text = ""
         Label10.Text = ""
+
         Label6.Text = Nota.TextBox2.Text
         Label7.Text = PerfilActitudinal.TextBox2.Text
         Label8.Text = Aula.TextBox2.Text
+
         Chart1.Hide()
+
     End Sub
 End Class
